@@ -25,6 +25,7 @@ public class Piece {
     public enum Color {
         WHITE(Attribute.TEXT_COLOR(255,255,255)),
         BLACK(Attribute.TEXT_COLOR(0,0,0));
+
         private final Attribute color;
         Color(Attribute color){
             this.color=color;
@@ -48,8 +49,10 @@ public class Piece {
         BLACK_BISHOP("♝", Color.BLACK),
         BLACK_KNIGHT("♞", Color.BLACK),
         BLACK_PAWN("♟", Color.BLACK);
+
         private final String shape;
         private final Color color;
+
         Type(String shape, Color color){
             this.shape=shape;
             this.color=color;
