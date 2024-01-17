@@ -49,7 +49,7 @@ public class Cell {
     }
 
     public enum Color {
-        //put your task here
+
         WHITE(Attribute.BACK_COLOR(180,180,180)),
         BLACK(Attribute.BACK_COLOR(100,100,100)),
         HIGHLIGHT_KILL_WHITE(Attribute.BACK_COLOR(180,0,0)),

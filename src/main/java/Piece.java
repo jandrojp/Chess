@@ -9,6 +9,12 @@ public class Piece {
     public Piece(Type type, Cell cell){
         this.type = type;
         this.cell = cell;
+        placePiece();
+    }
+
+    protected void placePiece() {
+        if (cell != null)
+            cell.setPiece(this);
     }
 
     public void setCell(Cell cell) {
