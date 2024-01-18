@@ -6,7 +6,7 @@ public class Board {
         cells = new Cell[8][8];
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {
-                cells[i][j] = new Cell(this,new Coordinate((char)(j+'A'),i + 1));
+                cells[i][j] = new Cell(this,new Coordinate((char)(j + 'A'),i + 1));
             }
         }
     }
