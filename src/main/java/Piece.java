@@ -16,9 +16,33 @@ public class Piece {
         if (cell != null)
             cell.setPiece(this);
     }
-
     public void setCell(Cell cell) {
         this.cell = cell;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public Cell getCell() {
+        return cell;
+    }
+
+    public Color getColor(){
+        return type.getColor();
+    }
+
+    protected boolean canAddToNextMovements(Coordinate coordinate) {
+
+        Board b1 = getCell().getBoard();
+
+        if (!b1.contains(coordinate))  return false;
+
+        if (b1.getCellAt(coordinate).isEmpty()) return true;
+
+        if (b1.getCellAt(coordinate).getPiece().getColor() != getColor()) return true;
+
+        return false;
     }
 
     @Override
