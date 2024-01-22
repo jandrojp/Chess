@@ -23,7 +23,7 @@ public class Bishop extends Piece {
         // Diagonal superior izq
         c = posicion;
         do {
-            c = c.up().left();
+            c = c.diagonalUpLeft();
             if (piece.canAddToNextMovements(c))
                 nextMovements = Tool.add(c, nextMovements);
 
@@ -32,7 +32,7 @@ public class Bishop extends Piece {
         // Diagonal superior der
         c = posicion;
         do {
-            c = c.up().right();
+            c = c.diagonalUpRight();
             if (piece.canAddToNextMovements(c))
                 nextMovements = Tool.add(c, nextMovements);
         } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
@@ -40,7 +40,7 @@ public class Bishop extends Piece {
         // Diagonal inferior izq
         c = posicion;
         do {
-            c = c.down().left();
+            c = c.diagonalDownLeft();
             if (piece.canAddToNextMovements(c))
                 nextMovements = Tool.add(c, nextMovements);
         } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
@@ -48,7 +48,7 @@ public class Bishop extends Piece {
         // Diagonal inferior der
         c = posicion;
         do {
-            c = c.down().right();
+            c = c.diagonalDownRight();
             if (piece.canAddToNextMovements(c))
                 nextMovements = Tool.add(c, nextMovements);
         } while (board.contains(c) && board.getCellAt(c).getPiece() == null);

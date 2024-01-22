@@ -25,12 +25,12 @@ public class Pawn extends Piece {
             posicionesCandidatas = Tool.add(c, posicionesCandidatas);
 
         // avanza matando
-        c = position.up().left();
+        c = position.diagonalUpLeft();
         if (board.contains(c)
                 && (board.getCellAt(c).getPiece() != null && board.getCellAt(c).getPiece().getColor() != getColor()))
             posicionesCandidatas = Tool.add(c, posicionesCandidatas);
 
-        c = position.up().right();
+        c = position.diagonalUpRight();
         if (board.contains(c)
                 && (board.getCellAt(c).getPiece() != null && board.getCellAt(c).getPiece().getColor() != getColor()))
             posicionesCandidatas = Tool.add(c, posicionesCandidatas);
@@ -61,12 +61,12 @@ public class Pawn extends Piece {
             posicionesCandidatas = Tool.add(c, posicionesCandidatas);
 
         // avanza matando
-        c = position.down().left();
+        c = position.diagonalDownLeft();
         if (board.contains(c)
                 && (board.getCellAt(c).getPiece() != null && board.getCellAt(c).getPiece().getColor() != getColor()))
             posicionesCandidatas = Tool.add(c, posicionesCandidatas);
 
-        c = position.down().right();
+        c = position.diagonalDownRight();
         if (board.contains(c)
                 && (board.getCellAt(c).getPiece() != null && board.getCellAt(c).getPiece().getColor() != getColor()))
             posicionesCandidatas = Tool.add(c, posicionesCandidatas);
