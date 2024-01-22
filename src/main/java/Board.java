@@ -11,7 +11,6 @@ public class Board {
         }
     }
 
-
     public boolean contains(Coordinate c) {
 
         return !(c.getNumber() < 1 || c.getNumber() > 8
@@ -53,4 +52,5 @@ public class Board {
         aux += "    A  B  C  D  E  F  G  H";
         return aux;
     }
+
 }
