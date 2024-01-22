@@ -23,6 +23,18 @@ public class Board {
         return cells[c.getNumber() - 1][c.getLetter() - 'A'];
     }
 
+    public void highlight(Coordinate[] coordinates) {
+        for (Coordinate coordinate : coordinates) {
+            getCellAt(coordinate).highlight();
+        }
+    }
+
+    public void resetColor(Coordinate[] coordinates) {
+        for (Coordinate coordinate : coordinates) {
+            getCellAt(coordinate).resetColor();
+        }
+    }
+
     @Override
     public String toString() {
         String aux = "    A  B  C  D  E  F  G  H\n";
