@@ -2,7 +2,7 @@ import com.diogonunes.jcolor.Attribute;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 
-public class Piece {
+public abstract class Piece {
     private Type type;
     private Cell cell;
 
@@ -44,6 +44,8 @@ public class Piece {
 
         return false;
     }
+
+    public abstract Coordinate[] getNextMovements();
 
     @Override
     public String toString() {

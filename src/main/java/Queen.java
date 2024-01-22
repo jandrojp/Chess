@@ -4,6 +4,21 @@ public class Queen extends Piece {
         super(type.getType(), board.getCellAt(position));
     }
 
+    @Override
+    public Coordinate[] getNextMovements(){
+        Coordinate[] nextMovements = new Coordinate[0];
+
+        for (Coordinate c : Bishop.getNextMovementsAsBishop(this)) {
+            nextMovements = Tool.add(c, nextMovements);
+        }
+
+        for (Coordinate c : Rook.getNextMovementsAsRook(this)) {
+            nextMovements = Tool.add(c, nextMovements);
+        }
+
+        return nextMovements;
+    }
+
     public enum Type {
         BLACK(Piece.Type.BLACK_QUEEN),
         WHITE(Piece.Type.WHITE_QUEEN);

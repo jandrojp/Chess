@@ -4,6 +4,7 @@ public class Knight extends Piece {
         super(type.getType(), board.getCellAt(position));
     }
 
+    @Override
     public Coordinate[] getNextMovements() {
 
         Coordinate[] nextMovements = new Coordinate[0];

@@ -3,6 +3,58 @@ public class Rook extends Piece {
         super(type.getType(), board.getCellAt(position));
     }
 
+    @Override
+    public Coordinate[] getNextMovements(){
+        return getNextMovementsAsRook(this);
+    }
+
+    public static Coordinate[] getNextMovementsAsRook(Piece piece) {
+
+        Coordinate[] nextMovements = new Coordinate[0];
+        Coordinate posicion = piece.getCell().getCoordinate();
+        Coordinate c;
+        Board board = piece.getCell().getBoard();
+
+        // Comprobamos que la ficha este en el tablero
+        if (posicion == null)
+            return nextMovements;
+
+        // Up
+        c = posicion;
+        do {
+            c = c.up();
+            if (piece.canAddToNextMovements(c))
+                nextMovements = Tool.add(c, nextMovements);
+
+        } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
+
+        // Down
+        c = posicion;
+        do {
+            c = c.down();
+            if (piece.canAddToNextMovements(c))
+                nextMovements = Tool.add(c, nextMovements);
+        } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
+
+        // Left
+        c = posicion;
+        do {
+            c = c.left();
+            if (piece.canAddToNextMovements(c))
+                nextMovements = Tool.add(c, nextMovements);
+        } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
+
+        // Right
+        c = posicion;
+        do {
+            c = c.right();
+            if (piece.canAddToNextMovements(c))
+                nextMovements = Tool.add(c, nextMovements);
+        } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
+
+        return nextMovements;
+    }
+
     public enum Type {
         BLACK(Piece.Type.BLACK_ROOK),
         WHITE(Piece.Type.WHITE_ROOK);
