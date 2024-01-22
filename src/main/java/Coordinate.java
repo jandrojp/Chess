@@ -39,23 +39,23 @@ public class Coordinate {
     }
 
     @Override
-    public String toString(){
-        return "("+letter+","+number+")";
+    public String toString() {
+        return "(" + letter + ", " + number + ")";
     }
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         //es nulo?
-        if(obj==null) return false;
+        if (obj==null) return false;
 
         //es una instancia de Coordenada?
-        if(!(obj instanceof Coordinate)) return false;
+        if (!(obj instanceof Coordinate)) return false;
 
         //casting
         Coordinate coordinate = (Coordinate) obj;
 
         //comprobación
-        return (coordinate.letter==this.letter &&
-                coordinate.number==this.number);
+        return (coordinate.letter == this.letter &&
+                coordinate.number == this.number);
     }
 
 }

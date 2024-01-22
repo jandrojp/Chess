@@ -14,11 +14,12 @@ public class Cell {
         this.board = board;
         this.coordinate = coordinate;
         this.piece = null;
-        this.originalColor=(((coordinate.getLetter()-'A')+(coordinate.getNumber()-1))%2==0)?Color.WHITE:Color.BLACK;
-        this.color=originalColor;
+        this.originalColor = (((coordinate.getLetter() - 'A') + (coordinate.getNumber() - 1)) % 2 == 0) ? Color.WHITE : Color.BLACK;
+        this.color = originalColor;
     }
+
     public boolean isEmpty(){
-        return piece==null;
+        return piece == null;
     }
 
     public Piece getPiece() {
@@ -59,25 +60,24 @@ public class Cell {
 
     @Override
     public String toString() {
-        if(piece==null)
-            return colorize("   ",color.getAttribute());
-        return colorize(" ",color.getAttribute())+piece+colorize(" ",color.getAttribute());
+        if (piece == null)
+            return colorize("   ", color.getAttribute());
+        return colorize(" ", color.getAttribute()) + piece + colorize(" ", color.getAttribute());
     }
 
     public enum Color {
-
-        WHITE(Attribute.BACK_COLOR(180,180,180)),
-        BLACK(Attribute.BACK_COLOR(100,100,100)),
-        HIGHLIGHT_KILL_WHITE(Attribute.BACK_COLOR(180,0,0)),
-        HIGHLIGHT_KILL_BLACK(Attribute.BACK_COLOR(130,0,0)),
-        HIGHLIGHT_WHITE(Attribute.BACK_COLOR(180,180,0)),
-        HIGHLIGHT_BLACK(Attribute.BACK_COLOR(130,130,0));
+        WHITE (Attribute.BACK_COLOR(180,180,180)),
+        BLACK (Attribute.BACK_COLOR(100,100,100)),
+        HIGHLIGHT_KILL_WHITE (Attribute.BACK_COLOR(180,0,0)),
+        HIGHLIGHT_KILL_BLACK (Attribute.BACK_COLOR(130,0,0)),
+        HIGHLIGHT_WHITE (Attribute.BACK_COLOR(180,180,0)),
+        HIGHLIGHT_BLACK (Attribute.BACK_COLOR(130,130,0));
 
         private Attribute color;
         Color(Attribute color){
-            this.color=color;
+            this.color = color;
         }
-        public Attribute getAttribute(){return color;}
+        public Attribute getAttribute(){ return color; }
 
     }
 }

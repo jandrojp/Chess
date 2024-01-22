@@ -20,7 +20,6 @@ public class Pawn extends Piece {
 
         // posicion delante
         c = position.up();
-
         if (board.contains(c) && board.getCellAt(c).getPiece() == null)
             posicionesCandidatas = Tool.add(c, posicionesCandidatas);
 
@@ -56,7 +55,6 @@ public class Pawn extends Piece {
 
         // posicion delante
         c = position.down();
-
         if (board.contains(c) && board.getCellAt(c).getPiece() == null)
             posicionesCandidatas = Tool.add(c, posicionesCandidatas);
 

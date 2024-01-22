@@ -1,13 +1,9 @@
 public class Bishop extends Piece {
 
-    public Bishop(Board board, Coordinate position, Type type) {
-        super(type.getType(), board.getCellAt(position));
-    }
+    public Bishop(Board board, Coordinate position, Type type) { super(type.getType(), board.getCellAt(position)); }
 
     @Override
-    public Coordinate[] getNextMovements(){
-        return getNextMovementsAsBishop(this);
-    }
+    public Coordinate[] getNextMovements() { return getNextMovementsAsBishop(this); }
 
     public static Coordinate[] getNextMovementsAsBishop(Piece piece) {
 
@@ -26,7 +22,6 @@ public class Bishop extends Piece {
             c = c.diagonalUpLeft();
             if (piece.canAddToNextMovements(c))
                 nextMovements = Tool.add(c, nextMovements);
-
         } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
 
         // Diagonal superior der
@@ -57,17 +52,13 @@ public class Bishop extends Piece {
     }
 
     public enum Type {
-        BLACK(Piece.Type.BLACK_BISHOP),
-        WHITE(Piece.Type.WHITE_BISHOP);
+        BLACK (Piece.Type.BLACK_BISHOP),
+        WHITE (Piece.Type.WHITE_BISHOP);
 
         private Piece.Type type;
 
-        Type(Piece.Type type) {
-            this.type = type;
-        }
+        Type(Piece.Type type) { this.type = type; }
 
-        public Piece.Type getType() {
-            return type;
-        }
+        public Piece.Type getType() { return type; }
     }
 }
