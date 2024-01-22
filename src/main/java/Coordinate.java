@@ -16,16 +16,16 @@ public class Coordinate {
         return number;
     }
     public Coordinate up(){
-        return new Coordinate(letter,--number);
+        return new Coordinate(letter, number - 1);
     }
     public Coordinate down(){
-        return new Coordinate(letter,++number);
+        return new Coordinate(letter, number + 1);
     }
     public Coordinate left(){
-        return new Coordinate(--letter,number);
+        return new Coordinate((char) (letter - 1), number);
     }
     public Coordinate right(){
-        return new Coordinate(++letter,number);
+        return new Coordinate((char) (letter + 1), number);
     }
     public Coordinate diagonalUpLeft(){
         return new Coordinate(--letter,--number);

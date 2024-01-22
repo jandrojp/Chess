@@ -8,7 +8,6 @@ public class King extends Piece {
     public Coordinate[] getNextMovements() {
 
         Coordinate[] nextMovements = new Coordinate[0];
-
         Coordinate myPosition = getCell().getCoordinate();
         Coordinate c;
 
