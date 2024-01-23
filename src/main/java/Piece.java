@@ -47,10 +47,46 @@ public abstract class Piece {
 
     public abstract Coordinate[] getNextMovements();
 
+    public boolean canMoveTo(Coordinate coordinate) {
+
+        for (Coordinate c : getNextMovements()) {
+            if (coordinate.equals(c)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void remove(){
+
+        if (cell != null)
+            cell.setPiece(null);
+
+        cell = null;
+    }
+
+    public boolean moveTo(Coordinate coordinate) {
+        if (!canMoveTo(coordinate))
+            return false;
+
+        Board board = cell.getBoard();
+
+        if (!board.getCellAt(coordinate).isEmpty()) {
+            board.getCellAt(coordinate).getPiece().remove();
+        }
+
+        remove();
+        setCell(board.getCellAt(coordinate));
+        placePiece();
+
+        return true;
+    }
+
     @Override
     public String toString() {
-        if(cell==null)
-            return colorize(type.getShape(),type.getColor().getAttribute());
+        if (cell == null)
+            return colorize(type.getShape(), type.getColor().getAttribute());
         return colorize(type.getShape(),type.getColor().getAttribute(),cell.getColor().getAttribute());
     }
 
