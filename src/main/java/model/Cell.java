@@ -1,3 +1,5 @@
+package model;
+
 import com.diogonunes.jcolor.Attribute;
 
 import static com.diogonunes.jcolor.Ansi.colorize;

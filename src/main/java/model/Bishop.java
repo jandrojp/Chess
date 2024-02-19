@@ -1,13 +1,18 @@
+package model;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class Bishop extends Piece {
 
     public Bishop(Board board, Coordinate position, Type type) { super(type.getType(), board.getCellAt(position)); }
 
     @Override
-    public Coordinate[] getNextMovements() { return getNextMovementsAsBishop(this); }
+    public Set<Coordinate> getNextMovements() { return getNextMovementsAsBishop(this); }
 
-    public static Coordinate[] getNextMovementsAsBishop(Piece piece) {
+    public static Set<Coordinate> getNextMovementsAsBishop(Piece piece) {
 
-        Coordinate[] nextMovements = new Coordinate[0];
+        Set<Coordinate> nextMovements = new HashSet<>();
         Coordinate posicion = piece.getCell().getCoordinate();
         Coordinate c;
         Board board = piece.getCell().getBoard();
@@ -21,7 +26,7 @@ public class Bishop extends Piece {
         do {
             c = c.diagonalUpLeft();
             if (piece.canAddToNextMovements(c))
-                nextMovements = Tool.add(c, nextMovements);
+                nextMovements.add(c);
         } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
 
         // Diagonal superior der
@@ -29,7 +34,7 @@ public class Bishop extends Piece {
         do {
             c = c.diagonalUpRight();
             if (piece.canAddToNextMovements(c))
-                nextMovements = Tool.add(c, nextMovements);
+                nextMovements.add(c);
         } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
 
         // Diagonal inferior izq
@@ -37,7 +42,7 @@ public class Bishop extends Piece {
         do {
             c = c.diagonalDownLeft();
             if (piece.canAddToNextMovements(c))
-                nextMovements = Tool.add(c, nextMovements);
+                nextMovements.add(c);
         } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
 
         // Diagonal inferior der
@@ -45,7 +50,7 @@ public class Bishop extends Piece {
         do {
             c = c.diagonalDownRight();
             if (piece.canAddToNextMovements(c))
-                nextMovements = Tool.add(c, nextMovements);
+                nextMovements.add(c);
         } while (board.contains(c) && board.getCellAt(c).getPiece() == null);
 
         return nextMovements;

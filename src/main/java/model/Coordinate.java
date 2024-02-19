@@ -1,3 +1,5 @@
+package model;
+
 public class Coordinate {
 
     private char letter;
@@ -11,10 +13,10 @@ public class Coordinate {
     public char getLetter() {
         return letter;
     }
-
     public int getNumber() {
         return number;
     }
+
     public Coordinate up(){
         return new Coordinate(letter, number - 1);
     }
@@ -44,18 +46,18 @@ public class Coordinate {
     }
     @Override
     public boolean equals(Object obj) {
-        //es nulo?
-        if (obj==null) return false;
 
-        //es una instancia de Coordenada?
+        if (obj == null) return false;
         if (!(obj instanceof Coordinate)) return false;
 
-        //casting
         Coordinate coordinate = (Coordinate) obj;
 
-        //comprobación
         return (coordinate.letter == this.letter &&
                 coordinate.number == this.number);
+    }
+
+    @Override public int hashCode() {
+        return number;
     }
 
 }

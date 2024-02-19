@@ -1,4 +1,8 @@
+package model;
+
 import com.diogonunes.jcolor.Attribute;
+
+import java.util.Set;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 
@@ -45,7 +49,7 @@ public abstract class Piece {
         return false;
     }
 
-    public abstract Coordinate[] getNextMovements();
+    public abstract Set<Coordinate> getNextMovements();
 
     public boolean canMoveTo(Coordinate coordinate) {
 

@@ -1,3 +1,8 @@
+package model;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class Pawn extends Piece {
 
     public Pawn(Board board, Coordinate position, Type type) {
@@ -5,15 +10,15 @@ public class Pawn extends Piece {
     }
 
     @Override
-    public Coordinate[] getNextMovements() {
+    public Set<Coordinate> getNextMovements() {
         if (getColor() == Color.BLACK)
             return getNextMovementsAsBlack();
         else
             return getNextMovementsAsWhite();
     }
 
-    private Coordinate[] getNextMovementsAsWhite() {
-        Coordinate[] posicionesCandidatas = new Coordinate[0];
+    private Set<Coordinate> getNextMovementsAsWhite() {
+        Set<Coordinate> posicionesCandidatas = new HashSet<>();
         Coordinate c;
         Coordinate position = getCell().getCoordinate();
         Board board = getCell().getBoard();
@@ -21,18 +26,18 @@ public class Pawn extends Piece {
         // posicion delante
         c = position.up();
         if (board.contains(c) && board.getCellAt(c).getPiece() == null)
-            posicionesCandidatas = Tool.add(c, posicionesCandidatas);
+            posicionesCandidatas.add(c);
 
         // avanza matando
         c = position.diagonalUpLeft();
         if (board.contains(c)
                 && (board.getCellAt(c).getPiece() != null && board.getCellAt(c).getPiece().getColor() != getColor()))
-            posicionesCandidatas = Tool.add(c, posicionesCandidatas);
+            posicionesCandidatas.add(c);
 
         c = position.diagonalUpRight();
         if (board.contains(c)
                 && (board.getCellAt(c).getPiece() != null && board.getCellAt(c).getPiece().getColor() != getColor()))
-            posicionesCandidatas = Tool.add(c, posicionesCandidatas);
+            posicionesCandidatas.add(c);
 
         // Si esta en la posicion inicial se le permite avanzar 2 posiciones
         if (position.getNumber() == 7) {
@@ -40,15 +45,15 @@ public class Pawn extends Piece {
             if (board.contains(c) && board.getCellAt(c).getPiece() == null) {
                 c = c.up();
                 if (board.contains(c) && board.getCellAt(c).getPiece() == null) {
-                    posicionesCandidatas = Tool.add(c, posicionesCandidatas);
+                    posicionesCandidatas.add(c);
                 }
             }
         }
         return posicionesCandidatas;
     }
 
-    private Coordinate[] getNextMovementsAsBlack() {
-        Coordinate[] posicionesCandidatas = new Coordinate[0];
+    private Set<Coordinate> getNextMovementsAsBlack() {
+        Set<Coordinate> posicionesCandidatas = new HashSet<>();
         Coordinate c;
         Coordinate position = getCell().getCoordinate();
         Board board = getCell().getBoard();
@@ -56,18 +61,18 @@ public class Pawn extends Piece {
         // posicion delante
         c = position.down();
         if (board.contains(c) && board.getCellAt(c).getPiece() == null)
-            posicionesCandidatas = Tool.add(c, posicionesCandidatas);
+            posicionesCandidatas.add(c);
 
         // avanza matando
         c = position.diagonalDownLeft();
         if (board.contains(c)
                 && (board.getCellAt(c).getPiece() != null && board.getCellAt(c).getPiece().getColor() != getColor()))
-            posicionesCandidatas = Tool.add(c, posicionesCandidatas);
+            posicionesCandidatas.add(c);
 
         c = position.diagonalDownRight();
         if (board.contains(c)
                 && (board.getCellAt(c).getPiece() != null && board.getCellAt(c).getPiece().getColor() != getColor()))
-            posicionesCandidatas = Tool.add(c, posicionesCandidatas);
+            posicionesCandidatas.add(c);
 
         // Si esta en la posicion inicial se le permite avanzar 2 posiciones
         if (position.getNumber() == 2) {
@@ -75,7 +80,7 @@ public class Pawn extends Piece {
             if (board.contains(c) && board.getCellAt(c).getPiece() == null) {
                 c = c.down();
                 if (board.contains(c) && board.getCellAt(c).getPiece() == null) {
-                    posicionesCandidatas = Tool.add(c, posicionesCandidatas);
+                    posicionesCandidatas.add(c);
                 }
             }
         }
