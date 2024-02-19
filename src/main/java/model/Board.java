@@ -1,8 +1,6 @@
 package model;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Board {
 
@@ -72,4 +70,5 @@ public class Board {
         for (Coordinate c : cells.keySet())
             cells.get(c).resetColor();
     }
+
 }
