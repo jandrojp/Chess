@@ -20,7 +20,6 @@ public class DeletedPieceManager implements IDeletedPieceManager {
     // COUNT METHOD
     public int count (Piece.Type type){
         return pieces.size();
-        //return pieces.count(type);
     }
 
     // GET METHOD
