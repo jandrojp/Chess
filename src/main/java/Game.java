@@ -15,6 +15,8 @@ public class Game {
 
     public static void menu() {
 
+        Scanner sc = new Scanner(System.in);
+
         System.out.println();
         System.out.println("                                                                    " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + "  WELCOME TO THE CHESS ! ♟️" + Console.ANSI_RESET);
         System.out.println();
@@ -26,7 +28,14 @@ public class Game {
         }
 
         if (number == 1) {
+
             instructions();
+            System.out.println();
+
+            System.out.print("                                                  Name for player #1 ⚪: ");
+            String playerWhite = sc.next();
+            System.out.print("                                                  Name for player #2 ⚫: ");
+            String playerBlack = sc.next();
             System.out.println();
 
             Board board = new Board();

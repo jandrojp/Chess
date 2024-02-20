@@ -23,6 +23,7 @@ public class Input {
         return sc.nextInt();
     }
 
+
     /**
      *
      * @param message Message that arrives asking for an integer
