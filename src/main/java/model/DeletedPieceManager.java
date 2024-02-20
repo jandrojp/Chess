@@ -35,6 +35,7 @@ public class DeletedPieceManager implements IDeletedPieceManager {
     // TO STRING METHOD
     @Override
     public String toString() {
+
         return pieces.toString();
     }
 
