@@ -1,0 +1,88 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"15bf0db4-b424-468f-bb28-5d56820b5736\" name=\"Changes\" comment=\"Commit\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Main.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Piece.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Piece.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 1\n}</component>\n  <component name=\"ProjectId\" id=\"2alvr0LhKiSH5F1V0eMW5bagBOh\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/ajorgep/IdeaProjects/Chess/src/main/java&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;/home/ajorgep/IdeaProjects/Chess/src/main/java/org/example/Main.java&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/java\" />\n    </key>\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"jdk-11.0.21-corretto-11.0.21-f644763e9732-a9dfd5e7\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"15bf0db4-b424-468f-bb28-5d56820b5736\" name=\"Changes\" comment=\"\" />\n      <created>1704906176392</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1704906176392</updated>\n      <workItem from=\"1704906177665\" duration=\"1343000\" />\n      <workItem from=\"1704910494009\" duration=\"7000\" />\n      <workItem from=\"1704910973485\" duration=\"388000\" />\n      <workItem from=\"1704987063029\" duration=\"6000\" />\n      <workItem from=\"1705514577329\" duration=\"180000\" />\n      <workItem from=\"1705515105773\" duration=\"1042000\" />\n      <workItem from=\"1705593126945\" duration=\"1991000\" />\n      <workItem from=\"1705942055792\" duration=\"8524000\" />\n      <workItem from=\"1706028529890\" duration=\"3180000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1704911072538</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1704911072538</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1704911209088</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1704911209088</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1704911268816</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1704911268816</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705516143247</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705516143247</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705596379933</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705596379933</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705596817501</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705596817501</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705944573637</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705944573637</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705944866572</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705944866572</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705945473752</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705945473752</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705946145253</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705946145253</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705950144600</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705950144600</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1705951202521</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705951202521</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"Commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1706031709589</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1706031709589</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"14\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Commit\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Commit\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>\n          <line>15</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -7,7 +7,6 @@
+     <list default="true" id="15bf0db4-b424-468f-bb28-5d56820b5736" name="Changes" comment="Commit">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Piece.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -86,7 +85,9 @@
+       <workItem from="1705515105773" duration="1042000" />
+       <workItem from="1705593126945" duration="1991000" />
+       <workItem from="1705942055792" duration="8524000" />
+-      <workItem from="1706028529890" duration="3180000" />
++      <workItem from="1706028529890" duration="5166000" />
++      <workItem from="1708013387341" duration="583000" />
++      <workItem from="1708361376583" duration="14000" />
+     </task>
+     <task id="LOCAL-00001" summary="Commit">
+       <option name="closed" value="true" />
+@@ -192,7 +193,23 @@
+       <option name="project" value="LOCAL" />
+       <updated>1706031709589</updated>
+     </task>
+-    <option name="localTasksCounter" value="14" />
++    <task id="LOCAL-00014" summary="Commit">
++      <option name="closed" value="true" />
++      <created>1706031718007</created>
++      <option name="number" value="00014" />
++      <option name="presentableId" value="LOCAL-00014" />
++      <option name="project" value="LOCAL" />
++      <updated>1706031718007</updated>
++    </task>
++    <task id="LOCAL-00015" summary="Commit">
++      <option name="closed" value="true" />
++      <created>1706032724680</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1706032724680</updated>
++    </task>
++    <option name="localTasksCounter" value="16" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Main {\n    public static void main(String[] args) {\n        Board b1 = new Board();\n\n        Queen bishop = new Queen(b1, new Coordinate('D', 4), Queen.Type.BLACK);\n\n\n        System.out.println(bishop.canMoveTo(new Coordinate('C', 1)));\n\n        b1.highlight(bishop.getNextMovements());\n\n        System.out.println(b1);\n        b1.resetColor();\n        System.out.println(b1);\n\n\n        bishop.moveTo(new Coordinate('D', 7));\n\n        System.out.println(b1);\n    }\n}\n
+===================================================================
+diff --git a/src/main/java/Main.java b/src/main/java/Main.java
+--- a/src/main/java/Main.java	
++++ b/src/main/java/Main.java	
+@@ -2,10 +2,10 @@
+     public static void main(String[] args) {
+         Board b1 = new Board();
+ 
+-        Queen bishop = new Queen(b1, new Coordinate('D', 4), Queen.Type.BLACK);
++        Pawn bishop = new Pawn(b1, new Coordinate('B', 7), Pawn.Type.BLACK);
+ 
+ 
+-        System.out.println(bishop.canMoveTo(new Coordinate('C', 1)));
++
+ 
+         b1.highlight(bishop.getNextMovements());
+ 
+@@ -14,7 +14,11 @@
+         System.out.println(b1);
+ 
+ 
+-        bishop.moveTo(new Coordinate('D', 7));
++        bishop.moveTo(new Coordinate('B', 8));
++
++        System.out.println(b1);
++
++        b1.highlight(b1.getCellAt(new Coordinate('B', 8)).getPiece().getNextMovements());
+ 
+         System.out.println(b1);
+     }
