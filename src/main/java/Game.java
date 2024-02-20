@@ -1,5 +1,6 @@
 import controller.Input;
 import model.Board;
+import model.DeletedPieceManager;
 import view.Console;
 import view.Screen;
 
@@ -18,9 +19,9 @@ public class Game {
         Scanner sc = new Scanner(System.in);
 
         System.out.println();
-        System.out.println("                                                                    " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + "  WELCOME TO THE CHESS ! ♟️  " + Console.ANSI_RESET);
+        System.out.println("                                                                    " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + "  WELCOME TO THE CHESS ! ♟️ " + Console.ANSI_RESET);
         System.out.println();
-        int number = Input.getInteger("                                                  SELECT WHAT YOU WANT TO DO (1 - " + Console.GREEN_BACKGROUND + "  PLAY ▶️  " + Console.ANSI_RESET + "  /  2 - " + Console.RED_BACKGROUND + "  EXIT \uD83D\uDEAA  " + Console.ANSI_RESET + " ): ");
+        int number = Input.getInteger("                                                  SELECT WHAT YOU WANT TO DO (1 - " + Console.GREEN_BACKGROUND + "  PLAY ▶️ " + Console.ANSI_RESET + "  /  2 - " + Console.RED_BACKGROUND + "  EXIT \uD83D\uDEAA  " + Console.ANSI_RESET + " ): ");
 
         while (number != 1 && number != 2) {
             System.out.println("                                                                 " + Console.ANSI_RED + "   ERROR NUMBER, WRITE 1 OR 2 ! \uD83D\uDE21 " + Console.ANSI_RESET);
@@ -40,7 +41,10 @@ public class Game {
 
             Board board = new Board();
             board.placePieces();
-            Screen.show(board);
+            Screen.showWhite(board);
+            Screen.showBlack(board);
+            DeletedPieceManager dpm = new DeletedPieceManager();
+            System.out.println(dpm);
 
         } else {
             System.out.println();
@@ -66,28 +70,4 @@ public class Game {
         System.out.println("                          " + Console.ANSI_YELLOW + "----------------------------------------------------------------------------------------------------------------" + Console.ANSI_RESET);
     }
 
-
-    public static void game() {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Jugador blancas? ");
-        String jugadorBlancas = sc.next();
-        System.out.print("Jugador negras? ");
-        String jugadorNegras = sc.next();
-
-        System.out.println();
-
-        Board board = new Board();
-        board.placePieces();
-
-        System.out.println("Move " + jugadorBlancas + " -> BLACK");
-        System.out.println("Which piece do you want to move?");
-        System.out.print("Enter a coordinate: ");
-        String coordinate = sc.next();
-
-        System.out.println();
-
-        Screen.show(board);
-    }
 }

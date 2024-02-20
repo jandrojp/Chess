@@ -19,11 +19,23 @@ public class Screen {
         return salida.append(" " + fila + "\n").toString();
     }
 
-    public static void show(Board board) {
+    public static void showWhite(Board board) {
         StringBuilder salida = new StringBuilder();
         salida.append(getLetters());
 
         for (int fila = 1; fila <= 8; fila++) {
+            salida.append(getMiddlePart(board, fila));
+        }
+
+        salida.append(getLetters());
+        System.out.println(salida);
+    }
+
+    public static void showBlack(Board board) {
+        StringBuilder salida = new StringBuilder();
+        salida.append(getLetters());
+
+        for (int fila = 8; fila >= 1; fila--) {
             salida.append(getMiddlePart(board, fila));
         }
 
