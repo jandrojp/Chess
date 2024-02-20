@@ -6,11 +6,11 @@ import model.Coordinate;
 public class Screen {
 
     private static String getLetters() {
-        return "    A  B  C  D  E  F  G  H\n";
+        return "                                                                        A  B  C  D  E  F  G  H\n";
     }
 
     private static String getMiddlePart(Board board, int fila) {
-        StringBuilder salida = new StringBuilder(" " + fila + " ");
+        StringBuilder salida = new StringBuilder("                                                                     " + fila + " ");
 
         for (int col = 0; col < 8; col++) {
             salida.append(board.getCellAt(new Coordinate((char) ('A' + col), fila)));
