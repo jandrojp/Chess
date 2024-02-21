@@ -1,10 +1,10 @@
 import controller.Input;
-import model.Board;
-import model.DeletedPieceManager;
+import model.*;
 import view.Console;
 import view.Screen;
 
 import java.util.Scanner;
+import java.util.Set;
 
 public class Game {
     public static void main(String[] args) {
@@ -41,10 +41,18 @@ public class Game {
 
             Board board = new Board();
             board.placePieces();
+
             Screen.showWhite(board);
-            Screen.showBlack(board);
-            DeletedPieceManager dpm = new DeletedPieceManager();
-            System.out.println(dpm);
+            System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerWhite + " -> ⚪ " + Console.ANSI_RESET);
+            System.out.println("                                                  Which piece do you want to move?");
+
+            String coordinate = Input.getCoordinate();
+            moveWhite(coordinate, board);
+
+
+
+
+
 
         } else {
             System.out.println();
@@ -68,6 +76,27 @@ public class Game {
         System.out.println("                          -" + Console.ANSI_YELLOW + " Pawn promotion" + Console.ANSI_RESET + ": When a pawn reaches the eighth rank, it can be promoted to any other piece (except the king),\n                            usually a queen is chosen.");
         System.out.println();
         System.out.println("                          " + Console.ANSI_YELLOW + "----------------------------------------------------------------------------------------------------------------" + Console.ANSI_RESET);
+    }
+
+    public static void moveWhite(String coordinate, Board board) {
+
+        while (Coordinate.wrongLenght(coordinate) ||
+                Coordinate.letterErrorEasy(coordinate.charAt(0)) ||
+                Coordinate.numberErrorEasy(coordinate.charAt(1)) ||
+                board.getCellAt(new Coordinate(coordinate.charAt(0), coordinate.charAt(1) - 48)).isEmpty() ||
+                board.getCellAt(new Coordinate(coordinate.charAt(0), coordinate.charAt(1) - 48)).getPiece().getColor().equals(Piece.Color.BLACK)) {
+
+            System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
+            coordinate = Input.getCoordinate();
+        }
+
+        Coordinate chosenCoordinate = new Coordinate(coordinate.charAt(0), coordinate.charAt(1) - 48);
+        System.out.println();
+
+        Set<Coordinate> coordinates;
+        coordinates = board.getCellAt(chosenCoordinate).getPiece().getNextMovements();
+        board.highlight(coordinates);
+        Screen.showWhite(board);
     }
 
 }

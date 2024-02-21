@@ -7,7 +7,9 @@ public class Console {
     public static final String GREEN_BACKGROUND = "\u001B[42m";
     public static final String GREY_BACKGROUND = "\u001B[47m";
     public static final String BLUE_BACKGROUND = "\033[44m";
+    public static final String WHITE_BACKGROUND = "\u001B[47m";
     public static final String YELLOW_BACKGROUND = "\u001B[43m";
+    public static final String BLACK_BACKGROUND = "\u001B[40m";
 
     // FONT COLORS
     public static final String ANSI_RESET = "\u001B[0m";
