@@ -69,20 +69,4 @@ public class Coordinate {
         return coordinate.length() != 2;
     }
 
-    /**
-     *
-     * @param letter First character of the coordinate entered by the user
-     * @return Returns false if the character is less than the character 'A' or greater than the character 'H' and true if it is within
-     */
-    public static boolean letterErrorEasy(char letter) {
-        return letter < 'A' || letter > 'H';
-    }
-
-    /**
-     *
-     * @param number Second character of the coordinate entered by the user
-     * @return Returns false if the character is less than the character '0' or greater than the character '9' and true if it is within
-     */
-    public static boolean numberErrorEasy(char number) { return number < '0' || number > '8'; }
-
 }

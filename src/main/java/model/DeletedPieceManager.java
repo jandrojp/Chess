@@ -3,6 +3,8 @@ package model;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.diogonunes.jcolor.Ansi.colorize;
+
 public class DeletedPieceManager implements IDeletedPieceManager {
 
     // DELETED PIECE MANAGER ATTRIBUTES
@@ -35,8 +37,21 @@ public class DeletedPieceManager implements IDeletedPieceManager {
     // TO STRING METHOD
     @Override
     public String toString() {
+        String output = "                                                                 ";
 
-        return pieces.toString();
+        if (pieces != null) {
+            for (Piece.Type type : Piece.Type.values()) {
+                output += colorize(" " + type.getShape() + " ", type.getColor().getAttribute(), Cell.Color.BLACK.getAttribute());
+            }
+
+            output += "\n                                                                 ";
+
+            for (Piece.Type type : Piece.Type.values()) {
+                output += colorize(" " + count(type) + " ", type.getColor().getAttribute(), Cell.Color.WHITE.getAttribute());
+            }
+        }
+
+        return output;
     }
 
 }
