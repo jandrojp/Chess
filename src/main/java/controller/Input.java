@@ -49,7 +49,7 @@ public class Input {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("                                                  Enter a coordinate ➡️");
+        System.out.print("                                                  Enter a coordinate ➡️ ");
         String coordinate = sc.next();
         coordinate = coordinate.toUpperCase();
 

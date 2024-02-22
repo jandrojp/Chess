@@ -6,8 +6,6 @@ import view.Screen;
 import java.util.Scanner;
 import java.util.Set;
 
-import static com.diogonunes.jcolor.Ansi.colorize;
-
 public class Game {
     public static void main(String[] args) {
 
@@ -119,6 +117,7 @@ public class Game {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
             finalCoordinate = Input.getCoordinate();
+            destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
         }
 
 
@@ -163,6 +162,7 @@ public class Game {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
             finalCoordinate = Input.getCoordinate();
+            destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
         }
 
 
