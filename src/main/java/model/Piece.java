@@ -71,13 +71,20 @@ public abstract class Piece {
     }
 
     public boolean moveTo(Coordinate coordinate) {
+
+        /*
         if (!canMoveTo(coordinate))
             return false;
+
+         */
 
         Board board = cell.getBoard();
 
         if (!board.getCellAt(coordinate).isEmpty()) {
             board.getCellAt(coordinate).getPiece().remove();
+
+            Piece p = board.getCellAt(coordinate).getPiece();
+            board.getDeletedPieces().addPiece(p);
         }
 
         remove();

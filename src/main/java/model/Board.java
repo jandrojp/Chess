@@ -30,32 +30,32 @@ public class Board {
 
     public void placePieces() {
 
-        Piece kingBlack = new King(this, new Coordinate('E', 1), King.Type.BLACK);
+        King kingBlack = new King(this, new Coordinate('E', 1), King.Type.BLACK);
         remainingPieces.addPiece(kingBlack);
-        Piece kingWhite = new King(this, new Coordinate('E', 8), King.Type.WHITE);
+        King kingWhite = new King(this, new Coordinate('E', 8), King.Type.WHITE);
         remainingPieces.addPiece(kingWhite);
 
-        Piece queenBlack = new Queen(this, new Coordinate('D', 1), Queen.Type.BLACK);
+        Queen queenBlack = new Queen(this, new Coordinate('D', 1), Queen.Type.BLACK);
         remainingPieces.addPiece(queenBlack);
-        Piece queenWhite = new Queen(this, new Coordinate('D', 8), Queen.Type.WHITE);
+        Queen queenWhite = new Queen(this, new Coordinate('D', 8), Queen.Type.WHITE);
         remainingPieces.addPiece(queenWhite);
 
-        Piece bishopBlack1 = new Bishop(this, new Coordinate('C', 1), Bishop.Type.BLACK);
+        Bishop bishopBlack1 = new Bishop(this, new Coordinate('C', 1), Bishop.Type.BLACK);
         remainingPieces.addPiece(bishopBlack1);
-        Piece bishopBlack2 = new Bishop(this, new Coordinate('F', 1), Bishop.Type.BLACK);
+        Bishop bishopBlack2 = new Bishop(this, new Coordinate('F', 1), Bishop.Type.BLACK);
         remainingPieces.addPiece(bishopBlack2);
-        Piece bishopWhite1 = new Bishop(this, new Coordinate('C', 8), Bishop.Type.WHITE);
+        Bishop bishopWhite1 = new Bishop(this, new Coordinate('C', 8), Bishop.Type.WHITE);
         remainingPieces.addPiece(bishopWhite1);
-        Piece bishopWhite2 = new Bishop(this, new Coordinate('F', 8), Bishop.Type.WHITE);
+        Bishop bishopWhite2 = new Bishop(this, new Coordinate('F', 8), Bishop.Type.WHITE);
         remainingPieces.addPiece(bishopWhite2);
 
-        Piece knightBlack1 = new Knight(this, new Coordinate('B', 1), Knight.Type.BLACK);
+        Knight knightBlack1 = new Knight(this, new Coordinate('B', 1), Knight.Type.BLACK);
         remainingPieces.addPiece(knightBlack1);
-        Piece knightBlack2 = new Knight(this, new Coordinate('G', 1), Knight.Type.BLACK);
+        Knight knightBlack2 = new Knight(this, new Coordinate('G', 1), Knight.Type.BLACK);
         remainingPieces.addPiece(knightBlack2);
-        Piece knightWhite1 = new Knight(this, new Coordinate('B', 8), Knight.Type.WHITE);
+        Knight knightWhite1 = new Knight(this, new Coordinate('B', 8), Knight.Type.WHITE);
         remainingPieces.addPiece(knightWhite1);
-        Piece knightWhite2 = new Knight(this, new Coordinate('G', 8), Knight.Type.WHITE);
+        Knight knightWhite2 = new Knight(this, new Coordinate('G', 8), Knight.Type.WHITE);
         remainingPieces.addPiece(knightWhite2);
 
         Rook rookBlack1 = new Rook(this, new Coordinate('A', 1), Rook.Type.BLACK);

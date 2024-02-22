@@ -41,19 +41,23 @@ public class Game {
 
             Board board = new Board();
             board.placePieces();
-
             Screen.showWhite(board);
-            System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerWhite + " -> ⚪ " + Console.ANSI_RESET);
-            System.out.println("                                                  Which piece do you want to move?");
 
-            String coordinateWhite = Input.getCoordinate();
-            moveWhite(coordinateWhite, board);
+            while (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
+                    board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) {
 
-            System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
-            System.out.println("                                                  Which piece do you want to move?");
+                System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerWhite + " -> ⚪ " + Console.ANSI_RESET);
+                System.out.println("                                                  Which piece do you want to move?");
 
-            String coordinateBlack = Input.getCoordinate();
-            moveBlack(coordinateBlack, board);
+                String coordinateWhite = Input.getCoordinate();
+                moveWhite(coordinateWhite, board);
+
+                System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
+                System.out.println("                                                  Which piece do you want to move?");
+
+                String coordinateBlack = Input.getCoordinate();
+                moveBlack(coordinateBlack, board);
+            }
 
 
         } else {
@@ -110,8 +114,9 @@ public class Game {
         String finalCoordinate = Input.getCoordinate();
         Coordinate destinationCoordinate;
 
-        while (Coordinate.wrongLenght(finalCoordinate) || !(board.getCellAt(chosenCoordinate).
-                getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))) {
+        while (Coordinate.wrongLenght(finalCoordinate) /* ||  !(board.getCellAt(chosenCoordinate).
+                getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))
+                */) {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
             finalCoordinate = Input.getCoordinate();
@@ -119,6 +124,7 @@ public class Game {
 
         destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
         board.getCellAt(chosenCoordinate).getPiece().moveTo(destinationCoordinate);
+
         System.out.println();
         board.resetColor();
         Screen.showBlack(board);
@@ -154,8 +160,9 @@ public class Game {
         String finalCoordinate = Input.getCoordinate();
         Coordinate destinationCoordinate;
 
-        while (!(board.getCellAt(chosenCoordinate).
-                getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))) {
+        while (Coordinate.wrongLenght(finalCoordinate) /* ||  !(board.getCellAt(chosenCoordinate).
+                getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))
+                */) {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
             finalCoordinate = Input.getCoordinate();
