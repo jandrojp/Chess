@@ -5,9 +5,13 @@ import java.util.*;
 public class Board {
 
     private final Map<Coordinate, Cell> cells;
+    private DeletedPieceManager remainingPieces;
+    private DeletedPieceManager deletedPieces;
 
     public Board() {
         cells = new HashMap<>();
+        remainingPieces = new DeletedPieceManager();
+        deletedPieces = new DeletedPieceManager();
         initializeCells();
     }
 
@@ -25,26 +29,43 @@ public class Board {
     }
 
     public void placePieces() {
-        new King(this, new Coordinate('E', 1), King.Type.BLACK);
-        new King(this, new Coordinate('E', 8), King.Type.WHITE);
 
-        new Queen(this, new Coordinate('D', 1), Queen.Type.BLACK);
-        new Queen(this, new Coordinate('D', 8), Queen.Type.WHITE);
+        Piece kingBlack = new King(this, new Coordinate('E', 1), King.Type.BLACK);
+        remainingPieces.addPiece(kingBlack);
+        Piece kingWhite = new King(this, new Coordinate('E', 8), King.Type.WHITE);
+        remainingPieces.addPiece(kingWhite);
 
-        new Bishop(this, new Coordinate('C', 1), Bishop.Type.BLACK);
-        new Bishop(this, new Coordinate('F', 1), Bishop.Type.BLACK);
-        new Bishop(this, new Coordinate('C', 8), Bishop.Type.WHITE);
-        new Bishop(this, new Coordinate('F', 8), Bishop.Type.WHITE);
+        Piece queenBlack = new Queen(this, new Coordinate('D', 1), Queen.Type.BLACK);
+        remainingPieces.addPiece(queenBlack);
+        Piece queenWhite = new Queen(this, new Coordinate('D', 8), Queen.Type.WHITE);
+        remainingPieces.addPiece(queenWhite);
 
-        new Knight(this, new Coordinate('B', 1), Knight.Type.BLACK);
-        new Knight(this, new Coordinate('G', 1), Knight.Type.BLACK);
-        new Knight(this, new Coordinate('B', 8), Knight.Type.WHITE);
-        new Knight(this, new Coordinate('G', 8), Knight.Type.WHITE);
+        Piece bishopBlack1 = new Bishop(this, new Coordinate('C', 1), Bishop.Type.BLACK);
+        remainingPieces.addPiece(bishopBlack1);
+        Piece bishopBlack2 = new Bishop(this, new Coordinate('F', 1), Bishop.Type.BLACK);
+        remainingPieces.addPiece(bishopBlack2);
+        Piece bishopWhite1 = new Bishop(this, new Coordinate('C', 8), Bishop.Type.WHITE);
+        remainingPieces.addPiece(bishopWhite1);
+        Piece bishopWhite2 = new Bishop(this, new Coordinate('F', 8), Bishop.Type.WHITE);
+        remainingPieces.addPiece(bishopWhite2);
 
-        new Rook(this, new Coordinate('A', 1), Rook.Type.BLACK);
-        new Rook(this, new Coordinate('H', 1), Rook.Type.BLACK);
-        new Rook(this, new Coordinate('A', 8), Rook.Type.WHITE);
-        new Rook(this, new Coordinate('H', 8), Rook.Type.WHITE);
+        Piece knightBlack1 = new Knight(this, new Coordinate('B', 1), Knight.Type.BLACK);
+        remainingPieces.addPiece(knightBlack1);
+        Piece knightBlack2 = new Knight(this, new Coordinate('G', 1), Knight.Type.BLACK);
+        remainingPieces.addPiece(knightBlack2);
+        Piece knightWhite1 = new Knight(this, new Coordinate('B', 8), Knight.Type.WHITE);
+        remainingPieces.addPiece(knightWhite1);
+        Piece knightWhite2 = new Knight(this, new Coordinate('G', 8), Knight.Type.WHITE);
+        remainingPieces.addPiece(knightWhite2);
+
+        Rook rookBlack1 = new Rook(this, new Coordinate('A', 1), Rook.Type.BLACK);
+        remainingPieces.addPiece(rookBlack1);
+        Rook rookBlack2 = new Rook(this, new Coordinate('H', 1), Rook.Type.BLACK);
+        remainingPieces.addPiece(rookBlack2);
+        Rook rookWhite1 = new Rook(this, new Coordinate('A', 8), Rook.Type.WHITE);
+        remainingPieces.addPiece(rookWhite1);
+        Rook rookWhite2 = new Rook(this, new Coordinate('H', 8), Rook.Type.WHITE);
+        remainingPieces.addPiece(rookWhite2);
 
         for (int col = 0; col < 8; col++) {
             new Pawn(this, new Coordinate((char) ('A' + col), 2), Pawn.Type.BLACK);
@@ -60,6 +81,8 @@ public class Board {
         if (!contains(c)) return null;
         return cells.get(c);
     }
+    public DeletedPieceManager getRemainingPieces() { return remainingPieces; }
+    public DeletedPieceManager getDeletedPieces() { return deletedPieces; }
 
     public void highlight(Set<Coordinate> coordinates) {
         for (Coordinate c : coordinates)

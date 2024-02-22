@@ -47,15 +47,13 @@ public class Game {
             System.out.println("                                                  Which piece do you want to move?");
 
             String coordinateWhite = Input.getCoordinate();
-            DeletedPieceManager remainingPieces = new DeletedPieceManager();
-            DeletedPieceManager deletedPieces = new DeletedPieceManager();
-            moveWhite(coordinateWhite, board, remainingPieces, deletedPieces);
+            moveWhite(coordinateWhite, board);
 
             System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
             System.out.println("                                                  Which piece do you want to move?");
 
             String coordinateBlack = Input.getCoordinate();
-            moveBlack(coordinateBlack, board, remainingPieces, deletedPieces);
+            moveBlack(coordinateBlack, board);
 
 
         } else {
@@ -82,7 +80,7 @@ public class Game {
         System.out.println("                          " + Console.ANSI_YELLOW + "----------------------------------------------------------------------------------------------------------------" + Console.ANSI_RESET);
     }
 
-    public static void moveWhite(String startCoordinate, Board board, DeletedPieceManager remainingPieces, DeletedPieceManager deletedPieces) {
+    public static void moveWhite(String startCoordinate, Board board) {
         Set<Coordinate> coordinates;
 
         while (Coordinate.wrongLenght(startCoordinate) ||
@@ -103,31 +101,30 @@ public class Game {
         board.highlight(coordinates);
         Screen.showWhite(board);
         System.out.println(Console.ANSI_GREEN + "                                                                          REMAINING PIECES ✅" + Console.ANSI_RESET);
-        System.out.println(remainingPieces);
+        System.out.println(board.getRemainingPieces());
         System.out.println(Console.ANSI_RED + "                                                                           DELETED PIECES ❌" + Console.ANSI_RESET);
-        System.out.println(deletedPieces);
+        System.out.println(board.getDeletedPieces());
 
         System.out.println();
         System.out.println("                                                  Where do you want to move it?");
         String finalCoordinate = Input.getCoordinate();
-        Coordinate destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
+        Coordinate destinationCoordinate;
 
-        while (!(board.getCellAt(chosenCoordinate).
+        while (Coordinate.wrongLenght(finalCoordinate) || !(board.getCellAt(chosenCoordinate).
                 getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))) {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
             finalCoordinate = Input.getCoordinate();
-            destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
         }
 
-
+        destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
         board.getCellAt(chosenCoordinate).getPiece().moveTo(destinationCoordinate);
         System.out.println();
         board.resetColor();
         Screen.showBlack(board);
     }
 
-    public static void moveBlack(String startCoordinate, Board board, DeletedPieceManager remainingPieces, DeletedPieceManager deletedPieces) {
+    public static void moveBlack(String startCoordinate, Board board) {
         Set<Coordinate> coordinates;
 
         while (Coordinate.wrongLenght(startCoordinate) ||
@@ -148,24 +145,23 @@ public class Game {
         board.highlight(coordinates);
         Screen.showBlack(board);
         System.out.println(Console.ANSI_GREEN + "                                                                          REMAINING PIECES ✅" + Console.ANSI_RESET);
-        System.out.println(remainingPieces);
+        System.out.println(board.getRemainingPieces());
         System.out.println(Console.ANSI_RED + "                                                                           DELETED PIECES ❌" + Console.ANSI_RESET);
-        System.out.println(deletedPieces);
+        System.out.println(board.getDeletedPieces());
 
         System.out.println();
         System.out.println("                                                  Where do you want to move it?");
         String finalCoordinate = Input.getCoordinate();
-        Coordinate destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
+        Coordinate destinationCoordinate;
 
         while (!(board.getCellAt(chosenCoordinate).
                 getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))) {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
             finalCoordinate = Input.getCoordinate();
-            destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
         }
 
-
+        destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
         board.getCellAt(chosenCoordinate).getPiece().moveTo(destinationCoordinate);
         System.out.println();
         board.resetColor();

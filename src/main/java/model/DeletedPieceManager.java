@@ -21,7 +21,7 @@ public class DeletedPieceManager implements IDeletedPieceManager {
 
     // COUNT METHOD
     public int count (Piece.Type type){
-        return pieces.size();
+        return (int) pieces.stream().filter(p -> p.getType().equals(type)).count();
     }
 
     // GET METHOD
