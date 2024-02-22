@@ -68,8 +68,10 @@ public class Board {
         remainingPieces.addPiece(rookWhite2);
 
         for (int col = 0; col < 8; col++) {
-            new Pawn(this, new Coordinate((char) ('A' + col), 2), Pawn.Type.BLACK);
-            new Pawn(this, new Coordinate((char) ('A' + col), 7), Pawn.Type.WHITE);
+            Pawn pawnBlack = new Pawn(this, new Coordinate((char) ('A' + col), 2), Pawn.Type.BLACK);
+            remainingPieces.addPiece(pawnBlack);
+            Pawn pawnWhite = new Pawn(this, new Coordinate((char) ('A' + col), 7), Pawn.Type.WHITE);
+            remainingPieces.addPiece(pawnWhite);
         }
     }
 
