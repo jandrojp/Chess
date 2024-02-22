@@ -5,12 +5,12 @@ import java.util.*;
 public class Board {
 
     private final Map<Coordinate, Cell> cells;
-    private DeletedPieceManager remainingPieces;
+    private RemainingPieceManager remainingPieces;
     private DeletedPieceManager deletedPieces;
 
     public Board() {
         cells = new HashMap<>();
-        remainingPieces = new DeletedPieceManager();
+        remainingPieces = new RemainingPieceManager();
         deletedPieces = new DeletedPieceManager();
         initializeCells();
     }
@@ -83,7 +83,7 @@ public class Board {
         if (!contains(c)) return null;
         return cells.get(c);
     }
-    public DeletedPieceManager getRemainingPieces() { return remainingPieces; }
+    public RemainingPieceManager getRemainingPieces() { return remainingPieces; }
     public DeletedPieceManager getDeletedPieces() { return deletedPieces; }
 
     public void highlight(Set<Coordinate> coordinates) {

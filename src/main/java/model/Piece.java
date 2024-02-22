@@ -75,16 +75,24 @@ public abstract class Piece {
         /*
         if (!canMoveTo(coordinate))
             return false;
-
          */
 
         Board board = cell.getBoard();
 
         if (!board.getCellAt(coordinate).isEmpty()) {
-            board.getCellAt(coordinate).getPiece().remove();
-
             Piece p = board.getCellAt(coordinate).getPiece();
             board.getDeletedPieces().addPiece(p);
+
+            for (Piece.Type type : Piece.Type.values()) {
+
+                if (p.getType().getShape().equals(type.getShape()) &&
+                        p.getType().getColor().getAttribute().equals(type.getColor().getAttribute())) {
+                    board.getRemainingPieces().removeLast();
+                }
+                //output += colorize(" " + type.getShape() + " ", type.getColor().getAttribute());
+            }
+
+            board.getCellAt(coordinate).getPiece().remove();
         }
 
         remove();

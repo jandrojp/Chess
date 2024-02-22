@@ -52,7 +52,7 @@ public class Game {
                 String coordinateWhite = Input.getCoordinate();
                 moveWhite(coordinateWhite, board);
 
-                System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
+                System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
                 System.out.println("                                                  Which piece do you want to move?");
 
                 String coordinateBlack = Input.getCoordinate();
@@ -104,9 +104,9 @@ public class Game {
         coordinates = board.getCellAt(chosenCoordinate).getPiece().getNextMovements();
         board.highlight(coordinates);
         Screen.showWhite(board);
-        System.out.println(Console.ANSI_GREEN + "                                                                          REMAINING PIECES ✅" + Console.ANSI_RESET);
+        System.out.println("                                                                          REMAINING PIECES ✅" + Console.ANSI_RESET);
         System.out.println(board.getRemainingPieces());
-        System.out.println(Console.ANSI_RED + "                                                                           DELETED PIECES ❌" + Console.ANSI_RESET);
+        System.out.println("                                                                           DELETED PIECES ❌" + Console.ANSI_RESET);
         System.out.println(board.getDeletedPieces());
 
         System.out.println();
@@ -124,7 +124,6 @@ public class Game {
 
         destinationCoordinate = new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48);
         board.getCellAt(chosenCoordinate).getPiece().moveTo(destinationCoordinate);
-
         System.out.println();
         board.resetColor();
         Screen.showBlack(board);

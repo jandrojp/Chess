@@ -70,6 +70,8 @@ public class Cell {
     public enum Color {
         WHITE (Attribute.BACK_COLOR(180,180,180)),
         BLACK (Attribute.BACK_COLOR(100,100,100)),
+        RED(Attribute.BACK_COLOR(180,40,10)),
+        GREEN(Attribute.BACK_COLOR(40,180,10)),
         HIGHLIGHT_KILL_WHITE (Attribute.BACK_COLOR(180,0,0)),
         HIGHLIGHT_KILL_BLACK (Attribute.BACK_COLOR(130,0,0)),
         HIGHLIGHT_WHITE (Attribute.BACK_COLOR(180,180,0)),

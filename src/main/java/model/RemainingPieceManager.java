@@ -5,13 +5,12 @@ import java.util.Set;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 
-public class DeletedPieceManager implements IDeletedPieceManager {
-
+public class RemainingPieceManager implements IDeletedPieceManager {
     // DELETED PIECE MANAGER ATTRIBUTES
     private Set<Piece> pieces;
 
     // BUILDER
-    public DeletedPieceManager() { pieces = new HashSet<>(); }
+    public RemainingPieceManager() { pieces = new HashSet<>(); }
 
     // ADD PIECE METHOD
     @Override
@@ -41,7 +40,7 @@ public class DeletedPieceManager implements IDeletedPieceManager {
 
         if (pieces != null) {
             for (Piece.Type type : Piece.Type.values()) {
-                output += colorize(" " + type.getShape() + " ", type.getColor().getAttribute(), Cell.Color.RED.getAttribute());
+                output += colorize(" " + type.getShape() + " ", type.getColor().getAttribute(), Cell.Color.GREEN.getAttribute());
             }
 
             output += "\n                                                                 ";
@@ -53,5 +52,4 @@ public class DeletedPieceManager implements IDeletedPieceManager {
 
         return output;
     }
-
 }
