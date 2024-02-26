@@ -85,8 +85,7 @@ public abstract class Piece {
 
             for (Piece.Type type : Piece.Type.values()) {
 
-                if (p.getType().getShape().equals(type.getShape()) &&
-                        p.getType().getColor().getAttribute().equals(type.getColor().getAttribute())) {
+                if (board.getCellAt(coordinate).getPiece().getType().equals(type)) {
                     board.getRemainingPieces().removeLast();
                 }
                 //output += colorize(" " + type.getShape() + " ", type.getColor().getAttribute());

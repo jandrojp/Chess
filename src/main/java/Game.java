@@ -52,11 +52,28 @@ public class Game {
                 String coordinateWhite = Input.getCoordinate();
                 moveWhite(coordinateWhite, board);
 
-                System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
-                System.out.println("                                                  Which piece do you want to move?");
+                if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
+                        board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) {
 
-                String coordinateBlack = Input.getCoordinate();
-                moveBlack(coordinateBlack, board);
+                    System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
+                    System.out.println("                                                  Which piece do you want to move?");
+
+                    String coordinateBlack = Input.getCoordinate();
+                    moveBlack(coordinateBlack, board);
+                }
+            }
+
+            if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 1) {
+                System.out.println();
+                System.out.println("                                                  " + Console.ANSI_BLACK + Console.GREY_BACKGROUND + "  THE BLACK KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
+                System.out.println();
+                System.out.println("                                                  " + Console.ANSI_WHITE + Console.GREEN_BACKGROUND + "  " + playerWhite + " HAS WON THE GAME! \uD83C\uDFC6  " + Console.ANSI_RESET);
+
+            } else {
+                System.out.println();
+                System.out.println("                                                  " + Console.ANSI_WHITE + Console.GREY_BACKGROUND + "  THE WHITE KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
+                System.out.println();
+                System.out.println("                                                  " + Console.ANSI_BLACK + Console.GREEN_BACKGROUND + "  " + playerBlack + " HAS WON THE GAME! \uD83C\uDFC6  " + Console.ANSI_RESET);
             }
 
 
