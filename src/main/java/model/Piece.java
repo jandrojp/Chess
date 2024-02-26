@@ -94,10 +94,23 @@ public abstract class Piece {
         return true;
     }
 
-    public boolean check(Set<Coordinate> coordinates, Board board) {
+    public boolean checkWhite(Set<Coordinate> coordinates, Board board) {
 
         for (Coordinate c : coordinates) {
-            if (board.getCellAt(c).getPiece().getType().equals(Type.BLACK_KING)) return true;
+            if (!(board.getCellAt(c).isEmpty())) {
+                if (board.getCellAt(c).getPiece().getType().equals(Type.WHITE_KING)) return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean checkBlack(Set<Coordinate> coordinates, Board board) {
+
+        for (Coordinate c : coordinates) {
+            if (!(board.getCellAt(c).isEmpty())) {
+                if (board.getCellAt(c).getPiece().getType().equals(Type.BLACK_KING)) return true;
+            }
         }
 
         return false;

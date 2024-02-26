@@ -46,7 +46,7 @@ public class Game {
             while (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
                     board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) {
 
-                System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerWhite + " -> ⚪ " + Console.ANSI_RESET);
+                System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + "  Move " + playerWhite + " -> ⚪  " + Console.ANSI_RESET);
                 System.out.println("                                                  Which piece do you want to move?");
 
                 String coordinateWhite = Input.getCoordinate();
@@ -55,7 +55,7 @@ public class Game {
                 if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
                         board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) {
 
-                    System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
+                    System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + "  Move " + playerBlack + " -> ⚫  " + Console.ANSI_RESET);
                     System.out.println("                                                  Which piece do you want to move?");
 
                     String coordinateBlack = Input.getCoordinate();
@@ -144,6 +144,14 @@ public class Game {
         System.out.println();
         board.resetColor();
         Screen.showBlack(board);
+
+        Piece p = board.getCellAt(destinationCoordinate).getPiece();
+        Set<Coordinate> coordinatesTwo = p.getNextMovements();
+
+        if (p.checkBlack(coordinatesTwo, board)) {
+            System.out.println("                                                                  " + Console.RED_BACKGROUND + Console.ANSI_BLACK + "  ⚠ THE BLACK KING IS IN CHECK ⚠  " + Console.ANSI_RESET);
+            System.out.println();
+        }
     }
 
     public static void moveBlack(String startCoordinate, Board board) {
@@ -189,6 +197,15 @@ public class Game {
         System.out.println();
         board.resetColor();
         Screen.showWhite(board);
+
+        Piece p = board.getCellAt(destinationCoordinate).getPiece();
+        Set<Coordinate> coordinatesTwo = p.getNextMovements();
+
+        if (p.checkWhite(coordinatesTwo, board)) {
+            System.out.println("                                                                  " + Console.RED_BACKGROUND + Console.ANSI_WHITE + "  ⚠ THE WHITE KING IS IN CHECK ⚠  " + Console.ANSI_RESET);
+            System.out.println();
+        }
+
     }
 
 }
