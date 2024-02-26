@@ -96,4 +96,23 @@ public class Board {
             cells.get(c).resetColor();
     }
 
+    public boolean checkMate(Piece p) {
+        for (Cell c : cells.values()) {
+
+            Set<Coordinate> coordinates = c.getPiece().getNextMovements();
+
+            for (Coordinate co : coordinates) {
+
+                if (!c.getBoard().getCellAt(co).isEmpty()) {
+
+                    if (c.getBoard().getCellAt(co).getPiece().equals(p)) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
 }

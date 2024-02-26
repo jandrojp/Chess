@@ -107,7 +107,7 @@ public class Game {
         while (Coordinate.wrongLenght(startCoordinate) ||
                 !(board.contains(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48))) ||
                 board.getCellAt(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48)).isEmpty() ||
-                board.getCellAt(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48)).getPiece().getNextMovements().isEmpty() ||
+                //board.getCellAt(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48)).getPiece().getNextMovements().isEmpty() ||
                 board.getCellAt(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48)).getPiece().getColor().equals(Piece.Color.BLACK)) {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
@@ -143,15 +143,21 @@ public class Game {
         board.getCellAt(chosenCoordinate).getPiece().moveTo(destinationCoordinate);
         System.out.println();
         board.resetColor();
-        Screen.showBlack(board);
 
         Piece p = board.getCellAt(destinationCoordinate).getPiece();
         Set<Coordinate> coordinatesTwo = p.getNextMovements();
 
         if (p.checkBlack(coordinatesTwo, board)) {
+
+        } else {
+            Screen.showBlack(board);
+        }
+
+        if (p.checkBlack(coordinatesTwo, board)) {
             System.out.println("                                                                  " + Console.RED_BACKGROUND + Console.ANSI_BLACK + "  ⚠ THE BLACK KING IS IN CHECK ⚠  " + Console.ANSI_RESET);
             System.out.println();
         }
+
     }
 
     public static void moveBlack(String startCoordinate, Board board) {
@@ -160,7 +166,7 @@ public class Game {
         while (Coordinate.wrongLenght(startCoordinate) ||
                 !(board.contains(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48))) ||
                 board.getCellAt(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48)).isEmpty() ||
-                board.getCellAt(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48)).getPiece().getNextMovements().isEmpty() ||
+                //board.getCellAt(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48)).getPiece().getNextMovements().isEmpty() ||
                 board.getCellAt(new Coordinate(startCoordinate.charAt(0), startCoordinate.charAt(1) - 48)).getPiece().getColor().equals(Piece.Color.WHITE)) {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
