@@ -58,6 +58,10 @@ public class Cell {
 
     }
 
+    public void highlightCheck() {
+        color = Color.HIGHLIGHT_BLUE;
+    }
+
     public void resetColor() { color = originalColor; }
 
     @Override
@@ -75,7 +79,9 @@ public class Cell {
         HIGHLIGHT_KILL_WHITE (Attribute.BACK_COLOR(180,0,0)),
         HIGHLIGHT_KILL_BLACK (Attribute.BACK_COLOR(130,0,0)),
         HIGHLIGHT_WHITE (Attribute.BACK_COLOR(180,180,0)),
-        HIGHLIGHT_BLACK (Attribute.BACK_COLOR(130,130,0));
+        HIGHLIGHT_BLACK (Attribute.BACK_COLOR(130,130,0)),
+        HIGHLIGHT_BLUE (Attribute.BACK_COLOR(150,40,110));
+
 
         private Attribute color;
         Color(Attribute color){

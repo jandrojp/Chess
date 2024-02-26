@@ -72,10 +72,10 @@ public abstract class Piece {
 
     public boolean moveTo(Coordinate coordinate) {
 
-        /*
+
         if (!canMoveTo(coordinate))
             return false;
-         */
+
 
         Board board = cell.getBoard();
 
