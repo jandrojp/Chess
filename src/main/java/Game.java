@@ -65,13 +65,13 @@ public class Game {
 
             if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 1) {
                 System.out.println();
-                System.out.println("                                                  " + Console.ANSI_BLACK + Console.GREY_BACKGROUND + "  THE BLACK KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
+                System.out.println("                                                                  " + Console.ANSI_BLACK + Console.GREY_BACKGROUND + "  \uD83D\uDC80 THE BLACK KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
                 System.out.println();
                 System.out.println("                                                  " + Console.ANSI_WHITE + Console.GREEN_BACKGROUND + "  " + playerWhite + " HAS WON THE GAME! \uD83C\uDFC6  " + Console.ANSI_RESET);
 
             } else {
                 System.out.println();
-                System.out.println("                                                  " + Console.ANSI_WHITE + Console.GREY_BACKGROUND + "  THE WHITE KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
+                System.out.println("                                                                  " + Console.ANSI_WHITE + Console.GREY_BACKGROUND + "  \uD83D\uDC80 THE WHITE KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
                 System.out.println();
                 System.out.println("                                                  " + Console.ANSI_BLACK + Console.GREEN_BACKGROUND + "  " + playerBlack + " HAS WON THE GAME! \uD83C\uDFC6  " + Console.ANSI_RESET);
             }
