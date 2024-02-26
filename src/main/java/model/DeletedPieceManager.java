@@ -28,10 +28,8 @@ public class DeletedPieceManager implements IDeletedPieceManager {
     public Piece get (int index) { return (Piece) pieces.toArray()[index]; }
 
     // REMOVE LAST METHOD
-    public Piece removeLast() {
-        Piece piece = get(0);
+    public void removeLast(Piece piece) {
         pieces.remove(piece);
-        return piece;
     }
 
     // TO STRING METHOD

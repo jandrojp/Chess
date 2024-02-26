@@ -10,5 +10,5 @@ public interface IDeletedPieceManager {
     int count (Piece.Type pieceType);
 
     // REMOVE LAST METHOD
-    Piece removeLast ();
+    void removeLast (Piece piece);
 }

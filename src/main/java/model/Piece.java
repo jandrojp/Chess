@@ -82,14 +82,7 @@ public abstract class Piece {
         if (!board.getCellAt(coordinate).isEmpty()) {
             Piece p = board.getCellAt(coordinate).getPiece();
             board.getDeletedPieces().addPiece(p);
-
-            for (Piece.Type type : Piece.Type.values()) {
-
-                if (board.getCellAt(coordinate).getPiece().getType().equals(type)) {
-                    board.getRemainingPieces().removeLast();
-                }
-                //output += colorize(" " + type.getShape() + " ", type.getColor().getAttribute());
-            }
+            board.getRemainingPieces().removeLast(p);
 
             board.getCellAt(coordinate).getPiece().remove();
         }
