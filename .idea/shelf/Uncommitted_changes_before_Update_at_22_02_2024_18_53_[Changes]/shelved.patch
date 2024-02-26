@@ -1,0 +1,67 @@
+Index: src/main/java/Game.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Game.java b/src/main/java/Game.java
+--- a/src/main/java/Game.java	
++++ b/src/main/java/Game.java	
+@@ -3,8 +3,9 @@
+ import view.Console;
+ import view.Screen;
+ 
+-import java.util.Scanner;
+-import java.util.Set;
++import java.util.*;
++
++import static com.diogonunes.jcolor.Ansi.colorize;
+ 
+ public class Game {
+     public static void main(String[] args) {
+@@ -48,10 +49,13 @@
+ 
+             String coordinateWhite = Input.getCoordinate();
+             DeletedPieceManager remainingPieces = new DeletedPieceManager();
++            
++
++
+             DeletedPieceManager deletedPieces = new DeletedPieceManager();
+             moveWhite(coordinateWhite, board, remainingPieces, deletedPieces);
+ 
+-            System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
++            System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + " Move " + playerBlack + " -> ⚫ " + Console.ANSI_RESET);
+             System.out.println("                                                  Which piece do you want to move?");
+ 
+             String coordinateBlack = Input.getCoordinate();
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -7,7 +7,6 @@
+     <list default="true" id="15bf0db4-b424-468f-bb28-5d56820b5736" name="Changes" comment="Commit">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Input.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -251,7 +250,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1708540064640</updated>
+     </task>
+-    <option name="localTasksCounter" value="22" />
++    <task id="LOCAL-00022" summary="Commit">
++      <created>1708616323049</created>
++      <option name="number" value="00022" />
++      <option name="presentableId" value="LOCAL-00022" />
++      <option name="project" value="LOCAL" />
++      <updated>1708616323049</updated>
++    </task>
++    <option name="localTasksCounter" value="23" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
