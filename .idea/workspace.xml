@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15bf0db4-b424-468f-bb28-5d56820b5736" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DeletedPieceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DeletedPieceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/IDeletedPieceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/IDeletedPieceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/RemainingPieceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/RemainingPieceManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708962755313</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Commit">
+      <created>1708963474617</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1708963474617</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

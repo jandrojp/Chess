@@ -94,6 +94,15 @@ public abstract class Piece {
         return true;
     }
 
+    public boolean check(Set<Coordinate> coordinates, Board board) {
+
+        for (Coordinate c : coordinates) {
+            if (board.getCellAt(c).getPiece().getType().equals(Type.BLACK_KING)) return true;
+        }
+
+        return false;
+    }
+
     @Override
     public String toString() {
         if (cell == null)
