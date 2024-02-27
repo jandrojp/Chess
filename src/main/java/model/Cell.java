@@ -61,6 +61,9 @@ public class Cell {
     public void highlightCheck() {
         color = Color.HIGHLIGHT_BLUE;
     }
+    public void highlightCheckMate() {
+        color = Color.RED;
+    }
 
     public void resetColor() { color = originalColor; }
 
@@ -80,7 +83,7 @@ public class Cell {
         HIGHLIGHT_KILL_BLACK (Attribute.BACK_COLOR(130,0,0)),
         HIGHLIGHT_WHITE (Attribute.BACK_COLOR(180,180,0)),
         HIGHLIGHT_BLACK (Attribute.BACK_COLOR(130,130,0)),
-        HIGHLIGHT_BLUE (Attribute.BACK_COLOR(150,40,110));
+        HIGHLIGHT_BLUE (Attribute.BACK_COLOR(60,170,250));
 
 
         private Attribute color;

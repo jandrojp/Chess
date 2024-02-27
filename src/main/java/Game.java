@@ -8,10 +8,7 @@ import java.util.Set;
 
 public class Game {
     public static void main(String[] args) {
-
-
         menu();
-
     }
 
     public static void menu() {
@@ -141,8 +138,8 @@ public class Game {
         String finalCoordinate = Input.getCoordinate();
         Coordinate destinationCoordinate;
 
-        while (Coordinate.wrongLenght(finalCoordinate)  ||  !(board.getCellAt(chosenCoordinate).
-                getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))
+        while (Coordinate.wrongLenght(finalCoordinate) ||
+                !(board.getCellAt(chosenCoordinate).getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))
                 ) {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
@@ -158,7 +155,11 @@ public class Game {
         Set<Coordinate> coordinatesTwo = p.getNextMovements();
 
         if (p.checkBlack(coordinatesTwo, board)) {
-            p.getCell().highlightCheck();
+            if (board.checkMateBlack(p)) {
+                p.getCell().highlightCheckMate();
+            } else {
+                p.getCell().highlightCheck();
+            }
         } else {
             Screen.showBlack(board);
         }
@@ -171,7 +172,7 @@ public class Game {
                 System.out.println("                                                                  " + Console.ANSI_BLACK + Console.RED_BACKGROUND + "  \uD83D\uDC80 CHECKMATE THE BLACK KING \uD83D\uDC80  " + Console.ANSI_RESET);
                 checkmate = true;
             } else {
-                System.out.println("                                                               " + Console.BLUE_BACKGROUND + Console.ANSI_BLACK + "  ⚠️THE BLACK KING IS IN CHECK  ⚠️" + Console.ANSI_RESET);
+                System.out.println("                                                                " + Console.BLUE_BACKGROUND + Console.ANSI_BLACK + "  ⚠️  THE BLACK KING IS IN CHECK  ⚠️  " + Console.ANSI_RESET);
                 System.out.println();
             }
         }
@@ -209,8 +210,8 @@ public class Game {
         String finalCoordinate = Input.getCoordinate();
         Coordinate destinationCoordinate;
 
-        while (Coordinate.wrongLenght(finalCoordinate)  ||  !(board.getCellAt(chosenCoordinate).
-                getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))
+        while (Coordinate.wrongLenght(finalCoordinate) ||
+                !(board.getCellAt(chosenCoordinate).getPiece().canMoveTo(new Coordinate(finalCoordinate.charAt(0), finalCoordinate.charAt(1) - 48)))
                 ) {
 
             System.out.println(Console.ANSI_RED + "                                                                         COORDINATE ERROR ! \uD83D\uDE21" + Console.ANSI_RESET);
@@ -226,7 +227,13 @@ public class Game {
         Set<Coordinate> coordinatesTwo = p.getNextMovements();
 
         if (p.checkWhite(coordinatesTwo, board)) {
-            p.getCell().highlightCheck();
+
+            if (board.checkMateWhite(p)) {
+                p.getCell().highlightCheckMate();
+            } else {
+                p.getCell().highlightCheck();
+            }
+
         } else {
             Screen.showWhite(board);
         }
@@ -238,8 +245,9 @@ public class Game {
                 System.out.println();
                 System.out.println("                                                                  " + Console.ANSI_WHITE + Console.RED_BACKGROUND + "  \uD83D\uDC80 CHECKMATE THE WHITE KING \uD83D\uDC80  " + Console.ANSI_RESET);
                 checkmate = true;
+
             } else {
-                System.out.println("                                                               " + Console.BLUE_BACKGROUND + Console.ANSI_WHITE + "  ⚠️THE WHITE KING IS IN CHECK  ⚠️" + Console.ANSI_RESET);
+                System.out.println("                                                                " + Console.BLUE_BACKGROUND + Console.ANSI_WHITE + "  ⚠️  THE WHITE KING IS IN CHECK  ⚠️  " + Console.ANSI_RESET);
                 System.out.println();
             }
         }
