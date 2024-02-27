@@ -43,34 +43,39 @@ public class Game {
             board.placePieces();
             Screen.showWhite(board);
 
-            while (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
-                    board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) {
+            boolean checkmate = false;
+
+            while ((board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
+                    board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) &&
+                    !checkmate) {
+
 
                 System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + "  Move " + playerWhite + " -> ⚪  " + Console.ANSI_RESET);
                 System.out.println("                                                  Which piece do you want to move?");
 
                 String coordinateWhite = Input.getCoordinate();
-                moveWhite(coordinateWhite, board);
+                checkmate = moveWhite(coordinateWhite, board, checkmate);
 
-                if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
-                        board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) {
+                if ((board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
+                        board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) &&
+                        !checkmate) {
 
                     System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + "  Move " + playerBlack + " -> ⚫  " + Console.ANSI_RESET);
                     System.out.println("                                                  Which piece do you want to move?");
 
                     String coordinateBlack = Input.getCoordinate();
-                    moveBlack(coordinateBlack, board);
+                    checkmate = moveBlack(coordinateBlack, board, checkmate);
                 }
             }
 
+            System.out.println();
+
             if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 1) {
-                System.out.println();
                 System.out.println("                                                                  " + Console.ANSI_BLACK + Console.GREY_BACKGROUND + "  \uD83D\uDC80 THE BLACK KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
                 System.out.println();
                 System.out.println("                                                  " + Console.ANSI_WHITE + Console.GREEN_BACKGROUND + "  " + playerWhite + " HAS WON THE GAME! \uD83C\uDFC6  " + Console.ANSI_RESET);
 
-            } else {
-                System.out.println();
+            } else if (board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 1) {
                 System.out.println("                                                                  " + Console.ANSI_WHITE + Console.GREY_BACKGROUND + "  \uD83D\uDC80 THE WHITE KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
                 System.out.println();
                 System.out.println("                                                  " + Console.ANSI_BLACK + Console.GREEN_BACKGROUND + "  " + playerBlack + " HAS WON THE GAME! \uD83C\uDFC6  " + Console.ANSI_RESET);
@@ -101,7 +106,7 @@ public class Game {
         System.out.println("                          " + Console.ANSI_YELLOW + "----------------------------------------------------------------------------------------------------------------" + Console.ANSI_RESET);
     }
 
-    public static void moveWhite(String startCoordinate, Board board) {
+    public static boolean moveWhite(String startCoordinate, Board board, boolean checkmate) {
         Set<Coordinate> coordinates;
 
         while (Coordinate.wrongLenght(startCoordinate) ||
@@ -155,13 +160,21 @@ public class Game {
 
         if (p.checkBlack(coordinatesTwo, board)) {
             Screen.showBlack(board);
-            System.out.println("                                                               " + Console.RED_BACKGROUND + Console.ANSI_BLACK + "  ⚠️THE BLACK KING IS IN CHECK  ⚠️" + Console.ANSI_RESET);
-            System.out.println();
+
+            if (board.checkMateBlack(p)) {
+                System.out.println();
+                System.out.println("                                                                  " + Console.ANSI_BLACK + Console.RED_BACKGROUND + "  \uD83D\uDC80 CHECKMATE THE BLACK KING \uD83D\uDC80  " + Console.ANSI_RESET);
+                checkmate = true;
+            } else {
+                System.out.println("                                                               " + Console.BLUE_BACKGROUND + Console.ANSI_BLACK + "  ⚠️THE BLACK KING IS IN CHECK  ⚠️" + Console.ANSI_RESET);
+                System.out.println();
+            }
         }
 
+        return checkmate;
     }
 
-    public static void moveBlack(String startCoordinate, Board board) {
+    public static boolean moveBlack(String startCoordinate, Board board, boolean checkmate) {
         Set<Coordinate> coordinates;
 
         while (Coordinate.wrongLenght(startCoordinate) ||
@@ -215,10 +228,18 @@ public class Game {
 
         if (p.checkWhite(coordinatesTwo, board)) {
             Screen.showWhite(board);
-            System.out.println("                                                               " + Console.RED_BACKGROUND + Console.ANSI_WHITE + "  ⚠️THE WHITE KING IS IN CHECK  ⚠️" + Console.ANSI_RESET);
-            System.out.println();
+
+            if (board.checkMateWhite(p)) {
+                System.out.println();
+                System.out.println("                                                                  " + Console.ANSI_WHITE + Console.RED_BACKGROUND + "  \uD83D\uDC80 CHECKMATE THE WHITE KING \uD83D\uDC80  " + Console.ANSI_RESET);
+                checkmate = true;
+            } else {
+                System.out.println("                                                               " + Console.BLUE_BACKGROUND + Console.ANSI_WHITE + "  ⚠️THE WHITE KING IS IN CHECK  ⚠️" + Console.ANSI_RESET);
+                System.out.println();
+            }
         }
 
+        return checkmate;
     }
 
 }

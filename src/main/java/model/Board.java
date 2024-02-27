@@ -96,16 +96,63 @@ public class Board {
             cells.get(c).resetColor();
     }
 
-    public boolean checkMate(Piece p) {
-        for (Cell c : cells.values()) {
+    public boolean checkMateBlack(Piece p) {
 
-            Set<Coordinate> coordinates = c.getPiece().getNextMovements();
+        List<Piece> blackPieces = new ArrayList<>();
 
-            for (Coordinate co : coordinates) {
+        for (Cell cell : cells.values()) {
 
-                if (!c.getBoard().getCellAt(co).isEmpty()) {
+            if (!cell.isEmpty()) {
 
-                    if (c.getBoard().getCellAt(co).getPiece().equals(p)) {
+                if (cell.getPiece().getColor().equals(Piece.Color.BLACK)) {
+                    blackPieces.add(cell.getPiece());
+                }
+
+            }
+        }
+
+        for (Piece piece : blackPieces) {
+            Set<Coordinate> coordinates = piece.getNextMovements();
+            Board b = piece.getCell().getBoard();
+
+            for (Coordinate coordinate : coordinates) {
+
+                if (!b.getCellAt(coordinate).isEmpty()) {
+
+                    if (b.getCellAt(coordinate).getPiece().equals(p)) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public boolean checkMateWhite(Piece p) {
+
+        List<Piece> whitePieces = new ArrayList<>();
+
+        for (Cell cell : cells.values()) {
+
+            if (!cell.isEmpty()) {
+
+                if (cell.getPiece().getColor().equals(Piece.Color.WHITE)) {
+                    whitePieces.add(cell.getPiece());
+                }
+
+            }
+        }
+
+        for (Piece piece : whitePieces) {
+            Set<Coordinate> coordinates = piece.getNextMovements();
+            Board b = piece.getCell().getBoard();
+
+            for (Coordinate coordinate : coordinates) {
+
+                if (!b.getCellAt(coordinate).isEmpty()) {
+
+                    if (b.getCellAt(coordinate).getPiece().equals(p)) {
                         return false;
                     }
                 }
