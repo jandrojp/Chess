@@ -57,7 +57,6 @@ public class Cell {
         }
 
     }
-
     public void highlightCheck() {
         color = Color.HIGHLIGHT_BLUE;
     }

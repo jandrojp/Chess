@@ -91,6 +91,34 @@ public class Board {
             cells.get(c).highlight();
     }
 
+    public void highlightKingBlack(Piece p) {
+
+        Board b = p.getCell().getBoard();
+        for (Cell c : b.cells.values()) {
+
+            if (!c.isEmpty()) {
+                if (c.getPiece().getType().equals(Piece.Type.BLACK_KING)) {
+                    c.highlightCheckMate();
+                }
+            }
+        }
+
+    }
+
+    public void highlightKingWhite(Piece p) {
+
+        Board b = p.getCell().getBoard();
+        for (Cell c : b.cells.values()) {
+
+            if (!c.isEmpty()) {
+                if (c.getPiece().getType().equals(Piece.Type.WHITE_KING)) {
+                    c.highlightCheckMate();
+                }
+            }
+        }
+
+    }
+
     public void resetColor() {
         for (Coordinate c : cells.keySet())
             cells.get(c).resetColor();
@@ -120,7 +148,9 @@ public class Board {
                 if (!b.getCellAt(coordinate).isEmpty()) {
 
                     if (b.getCellAt(coordinate).getPiece().equals(p)) {
-                        return false;
+
+                        if (piece.checkBlack(piece.getNextMovements(), piece.getCell().getBoard())) return false;
+
                     }
                 }
             }
@@ -152,9 +182,7 @@ public class Board {
 
                 if (!b.getCellAt(coordinate).isEmpty()) {
 
-                    if (b.getCellAt(coordinate).getPiece().equals(p)) {
-                        return false;
-                    }
+                    if (piece.checkWhite(piece.getNextMovements(), piece.getCell().getBoard())) return false;
                 }
             }
         }

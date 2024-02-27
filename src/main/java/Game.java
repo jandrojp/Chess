@@ -156,10 +156,9 @@ public class Game {
 
         if (p.checkBlack(coordinatesTwo, board)) {
             if (board.checkMateBlack(p)) {
-                p.getCell().highlightCheckMate();
-            } else {
-                p.getCell().highlightCheck();
+                board.highlightKingBlack(p);
             }
+            p.getCell().highlightCheck();
         } else {
             Screen.showBlack(board);
         }
@@ -227,13 +226,10 @@ public class Game {
         Set<Coordinate> coordinatesTwo = p.getNextMovements();
 
         if (p.checkWhite(coordinatesTwo, board)) {
-
             if (board.checkMateWhite(p)) {
-                p.getCell().highlightCheckMate();
-            } else {
-                p.getCell().highlightCheck();
+                board.highlightKingWhite(p);
             }
-
+            p.getCell().highlightCheck();
         } else {
             Screen.showWhite(board);
         }
