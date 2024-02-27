@@ -43,40 +43,45 @@ public class Game {
             board.placePieces();
             Screen.showWhite(board);
 
-            boolean checkmate = false;
+            boolean checkmateWhite = false;
+            boolean checkmateBlack = false;
 
             while ((board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
                     board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) &&
-                    !checkmate) {
+                    !checkmateWhite && !checkmateBlack) {
 
 
                 System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_WHITE + "  Move " + playerWhite + " -> ⚪  " + Console.ANSI_RESET);
                 System.out.println("                                                  Which piece do you want to move?");
 
                 String coordinateWhite = Input.getCoordinate();
-                checkmate = moveWhite(coordinateWhite, board, checkmate);
+                checkmateWhite = moveWhite(coordinateWhite, board, checkmateWhite);
 
                 if ((board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 0 &&
                         board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 0) &&
-                        !checkmate) {
+                        !checkmateWhite) {
 
                     System.out.println("                                                  " + Console.YELLOW_BACKGROUND + Console.ANSI_BLACK + "  Move " + playerBlack + " -> ⚫  " + Console.ANSI_RESET);
                     System.out.println("                                                  Which piece do you want to move?");
 
                     String coordinateBlack = Input.getCoordinate();
-                    checkmate = moveBlack(coordinateBlack, board, checkmate);
+                    checkmateBlack = moveBlack(coordinateBlack, board, checkmateBlack);
                 }
             }
 
             System.out.println();
 
-            if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 1) {
-                System.out.println("                                                                  " + Console.ANSI_BLACK + Console.GREY_BACKGROUND + "  \uD83D\uDC80 THE BLACK KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
+            if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 1 || checkmateWhite) {
+                if (board.getDeletedPieces().count(Piece.Type.BLACK_KING) == 1) {
+                    System.out.println("                                                                  " + Console.ANSI_BLACK + Console.GREY_BACKGROUND + "  \uD83D\uDC80 THE BLACK KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
+                }
                 System.out.println();
                 System.out.println("                                                  " + Console.ANSI_WHITE + Console.GREEN_BACKGROUND + "  " + playerWhite + " HAS WON THE GAME! \uD83C\uDFC6  " + Console.ANSI_RESET);
 
-            } else if (board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 1) {
-                System.out.println("                                                                  " + Console.ANSI_WHITE + Console.GREY_BACKGROUND + "  \uD83D\uDC80 THE WHITE KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
+            } else if (board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 1 || checkmateBlack) {
+                if (board.getDeletedPieces().count(Piece.Type.WHITE_KING) == 1) {
+                    System.out.println("                                                                  " + Console.ANSI_WHITE + Console.GREY_BACKGROUND + "  \uD83D\uDC80 THE WHITE KING HAS DIED \uD83D\uDC80  " + Console.ANSI_RESET);
+                }
                 System.out.println();
                 System.out.println("                                                  " + Console.ANSI_BLACK + Console.GREEN_BACKGROUND + "  " + playerBlack + " HAS WON THE GAME! \uD83C\uDFC6  " + Console.ANSI_RESET);
             }
