@@ -171,7 +171,7 @@ public class Game {
                 System.out.println("                                                                  " + Console.ANSI_BLACK + Console.RED_BACKGROUND + "  \uD83D\uDC80 CHECKMATE THE BLACK KING \uD83D\uDC80  " + Console.ANSI_RESET);
                 checkmate = true;
             } else {
-                System.out.println("                                                                " + Console.BLUE_BACKGROUND + Console.ANSI_BLACK + "  ⚠️  THE BLACK KING IS IN CHECK  ⚠️  " + Console.ANSI_RESET);
+                System.out.println("                                                               " + Console.BLUE_BACKGROUND + Console.ANSI_BLACK + "  ⚠️ THE BLACK KING IS IN CHECK  ⚠️ " + Console.ANSI_RESET);
                 System.out.println();
             }
         }
@@ -243,7 +243,7 @@ public class Game {
                 checkmate = true;
 
             } else {
-                System.out.println("                                                                " + Console.BLUE_BACKGROUND + Console.ANSI_WHITE + "  ⚠️  THE WHITE KING IS IN CHECK  ⚠️  " + Console.ANSI_RESET);
+                System.out.println("                                                               " + Console.BLUE_BACKGROUND + Console.ANSI_WHITE + "  ⚠️ THE WHITE KING IS IN CHECK  ⚠️ " + Console.ANSI_RESET);
                 System.out.println();
             }
         }

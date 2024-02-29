@@ -1,0 +1,33 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -6,7 +6,7 @@
+   <component name="ChangeListManager">
+     <list default="true" id="15bf0db4-b424-468f-bb28-5d56820b5736" name="Changes" comment="Commit">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Board.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -326,7 +326,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1709047484045</updated>
+     </task>
+-    <option name="localTasksCounter" value="32" />
++    <task id="LOCAL-00032" summary="Commit">
++      <created>1709049613497</created>
++      <option name="number" value="00032" />
++      <option name="presentableId" value="LOCAL-00032" />
++      <option name="project" value="LOCAL" />
++      <updated>1709049613497</updated>
++    </task>
++    <option name="localTasksCounter" value="33" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

@@ -144,13 +144,10 @@ public class Board {
             Board b = piece.getCell().getBoard();
 
             for (Coordinate coordinate : coordinates) {
+                for (Coordinate coordinate1 : p.getNextMovements()) {
 
-                if (!b.getCellAt(coordinate).isEmpty()) {
-
-                    if (b.getCellAt(coordinate).getPiece().equals(p)) {
-
-                        if (piece.checkBlack(piece.getNextMovements(), piece.getCell().getBoard())) return false;
-
+                    if (!b.getCellAt(coordinate).isEmpty()) {
+                        if (!(coordinate.equals(coordinate1))) return false;
                     }
                 }
             }
@@ -158,6 +155,7 @@ public class Board {
 
         return true;
     }
+
 
     public boolean checkMateWhite(Piece p) {
 
@@ -179,15 +177,18 @@ public class Board {
             Board b = piece.getCell().getBoard();
 
             for (Coordinate coordinate : coordinates) {
+                for (Coordinate coordinate1 : p.getNextMovements()) {
 
-                if (!b.getCellAt(coordinate).isEmpty()) {
+                    if (!(coordinate.getLetter() == coordinate1.getLetter() &&
+                            coordinate.getNumber() == coordinate1.getNumber())) return false;
 
-                    if (piece.checkWhite(piece.getNextMovements(), piece.getCell().getBoard())) return false;
                 }
             }
         }
 
         return true;
     }
+
+    
 
 }
